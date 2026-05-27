@@ -12,7 +12,7 @@ phases:
             - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
             - aws ecr --region ap-northeast-2 get-login-password | docker login --username AWS --password-stdin https://${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-2.amazonaws.com/sbcntr-backend
             - REPOSITORY_URI=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION_NAME}.amazonaws.com/${ECR_REPOSITORY_NAME}
-            # 태그 이름에 Git 커밋 해시를 이용
+            # 태그 이름에 Git 커밋 해시를 이용해 요 
             - IMAGE_TAG=$(echo ${CODEBUILD_RESOLVED_SOURCE_VERSION} | cut -c 1-7)
 
     build:
