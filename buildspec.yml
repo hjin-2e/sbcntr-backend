@@ -22,6 +22,7 @@ phases:
     post_build:
         commands:
             - docker push ${REPOSITORY_URI}:${IMAGE_TAG}
+            - printf '{"name":"%s","ImageURI":"%s"}' $ECR_REPOSITORY_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinittions.json
 
   artifacts:
     files:
