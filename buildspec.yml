@@ -4,6 +4,7 @@ env:
     variables:
         AWS_REGION_NAME: ap-northeast-2
         ECR_REPOSITORY_NAME: sbcntr-backend
+        ECS_CONTAINER_NAME: sbcntr-backend
         DOCKER_BUILDKIT: "1"
 
 phases:
